@@ -6,7 +6,7 @@ import winston from 'winston';
 const prettyJson = winston.format.printf((info) => {
 	const timestamp = new Date().toLocaleTimeString();
 
-	let out = `${chalk.grey(`[${timestamp}]`)} ${info.level} ${chalk.grey(
+	let out = `${chalk.white(`[${timestamp}]`)} ${info.level} ${chalk.white(
 		'::'
 	)} ${info.message}`;
 
@@ -222,7 +222,7 @@ function buildSetupString(
 ): string {
 	if (color) {
 		return (
-			chalk.cyan(`[${store.name}]`) + chalk.grey(` [setup (${topic})]`)
+			chalk.cyan(`[${store.name}]`) + chalk.white(` [setup (${topic})]`)
 		);
 	}
 
@@ -233,7 +233,7 @@ function buildProductString(link: Link, store: Store, color?: boolean): string {
 	if (color) {
 		return (
 			chalk.cyan(`[${store.name}]`) +
-			chalk.grey(` [${link.brand} (${link.series})] ${link.model}`)
+			chalk.white(` [${link.brand} (${link.series})] ${link.model}`)
 		);
 	}
 
